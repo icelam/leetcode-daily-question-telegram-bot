@@ -1,0 +1,41 @@
+name: ci
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@main
+      - name: Setup Node.js version
+        uses: actions/setup-node@main
+        with:
+          node-version: 14.x
+      - name: Generate release body
+        run: |
+          npx rexreplace "(#+ \[\d+\.\d+\.\d+].*?)#+ \[?\d+\.\d+\.\d+]?" "_" -s -M -G -m -o "CHANGELOG.md" > RELEASE_BODY.md
+          result=$(cat RELEASE_BODY.md)
+
+          if [[ $? != 0 ]]; then
+              echo "Command failed."
+              exit 1;
+          elif [[ $result ]]; then
+              echo "Release body generated."
+          else
+              echo "This is the first release, using different command to generate release body."
+              npx rexreplace "(#+ \[?\d+\.\d+\.\d+]?.*)" "_" -s -M -G -m -o "CHANGELOG.md" > RELEASE_BODY.md
+          fi
+      - name: Create release
+        id: create-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+          body_path: RELEASE_BODY.md

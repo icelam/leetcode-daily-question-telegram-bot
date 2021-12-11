@@ -1,0 +1,39 @@
+# Serverless Configuration File
+
+service: leetcode-daily-question-telegram-bot
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: python3.9
+  lambdaHashingVersion: 20201221
+  environment:
+    TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
+    TELEGRAM_CHAT_ID: ${env:TELEGRAM_CHAT_ID}
+
+functions:
+  cron:
+    handler: app.handler.send_message
+    events:
+      # Invoke Lambda function at 00:01 (UTC+8) every day
+      # Syntax reference: https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html
+      - schedule: cron(1 16 * * ? *)
+
+package:
+  exclude:
+    - venv/**
+    - node_modules/**
+    - '**/__pycache__/**'
+    - .github/**
+    - .editorconfig
+    - .nvmrc
+
+# Handling python packages: https://www.serverless.com/blog/serverless-python-packaging
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: false
+

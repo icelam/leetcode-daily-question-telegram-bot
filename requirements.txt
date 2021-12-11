@@ -1,0 +1,4 @@
+python-telegram-bot==13.7
+pylint==2.11.1
+requests==2.26.0
+markdownify==0.10.0
