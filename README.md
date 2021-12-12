@@ -1,6 +1,8 @@
 # Leetcode Daily Question Telegram Bot
 
-> Fetch question of today from Leetcode's GraphQL API and send it to Telegram channel.
+Fetch question of today from Leetcode's GraphQL API and send it to Telegram channel.
+
+![Mockup](./docs/mockup.png)
 
 ## Development Notes
 
