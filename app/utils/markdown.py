@@ -8,7 +8,11 @@ class TelegramMarkdownConverter(MarkdownConverter):
 
     def convert_img(self, el, text, convert_as_inline):
         src = el.attrs.get('src', None) or ''
-        return f'Image: [{src}]({src})'
+
+        if convert_as_inline:
+            return f'(Image: [{src}]({src}))'
+
+        return f'\nImage: [{src}]({src})\n'
 
     def convert_br(self, el, text, convert_as_inline):
         if convert_as_inline:
