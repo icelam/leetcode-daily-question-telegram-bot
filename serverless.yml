@@ -16,9 +16,9 @@ functions:
   cron:
     handler: app.handler.send_message
     events:
-      # Invoke Lambda function at 00:01 (UTC+8) every day
+      # Invoke Lambda function at 00:01 (UTC) every day
       # Syntax reference: https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html
-      - schedule: cron(1 16 * * ? *)
+      - schedule: cron(1 0 * * ? *)
 
 package:
   exclude:
