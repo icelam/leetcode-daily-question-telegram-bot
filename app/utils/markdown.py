@@ -44,6 +44,16 @@ class TelegramMarkdownConverter(MarkdownConverter):
     def convert_sup(self, el, text, convert_as_inline):
         return f'^{text}'
 
+    def convert_a(self, el, text, convert_as_inline):
+        el['href'] = re.sub(r'\(', '%28', el['href'])
+        el['href'] = re.sub(r'\)', '%29', el['href'])
+        return MarkdownConverter.convert_a(
+            self=self,
+            el=el,
+            text=text,
+            convert_as_inline=convert_as_inline
+        )
+
 def generate(html, **options):
     """Convert function with options predefined"""
 
