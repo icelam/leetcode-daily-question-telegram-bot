@@ -1,4 +1,4 @@
-"""Convert HTML to Telegram markdown syntax"""
+"""Convert HTML to Telegram MarkdownV2 syntax"""
 
 import re
 from markdownify import MarkdownConverter, BACKSLASH
@@ -36,7 +36,8 @@ class TelegramMarkdownConverter(MarkdownConverter):
         if el.previous_sibling and el.previous_sibling.name in ['p']:
             after_paragraph = True
 
-        return ('\n' if not after_paragraph else '') + f"```{self.options['code_language']}\n{text.strip()}\n```\n\n"
+        unescaped_text = text.strip().replace(r'\_', '_')
+        return ('\n' if not after_paragraph else '') + f"```{self.options['code_language']}\n{unescaped_text}\n```\n\n"
 
     def convert_sub(self, el, text, convert_as_inline):
         return f'_{text}'
