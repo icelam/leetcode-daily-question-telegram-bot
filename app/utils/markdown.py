@@ -40,7 +40,7 @@ class TelegramMarkdownConverter(MarkdownConverter):
         return ('\n' if not after_paragraph else '') + f"```{self.options['code_language']}\n{unescaped_text}\n```\n\n"
 
     def convert_sub(self, el, text, convert_as_inline):
-        return f'_{text}'
+        return f'_{text}' if text.strip() else text
 
     def convert_sup(self, el, text, convert_as_inline):
         return f'^{text}'
