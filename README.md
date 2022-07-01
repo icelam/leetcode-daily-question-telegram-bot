@@ -8,7 +8,7 @@ Fetch question of today from Leetcode's GraphQL API and send it to Telegram chan
 
 ### Tech Stack
 * Python 3
-* [Serverless@2.63.0](https://www.npmjs.com/package/serverless)
+* [Serverless](https://www.npmjs.com/package/serverless)
 * AWS Lambda
 * AWS CloudFormation - Used by Serverless when doing deployment
 * AWS CloudWatch - Automatically Setup by Serverless when doing deployment

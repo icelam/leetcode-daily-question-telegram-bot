@@ -2,12 +2,11 @@
 
 service: leetcode-daily-question-telegram-bot
 
-frameworkVersion: "2"
+frameworkVersion: "3"
 
 provider:
   name: aws
   runtime: python3.9
-  lambdaHashingVersion: 20201221
   environment:
     TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
     TELEGRAM_CHAT_ID: ${env:TELEGRAM_CHAT_ID}
@@ -21,13 +20,13 @@ functions:
       - schedule: cron(1 0 * * ? *)
 
 package:
-  exclude:
-    - venv/**
-    - node_modules/**
-    - '**/__pycache__/**'
-    - .github/**
-    - .editorconfig
-    - .nvmrc
+  patterns:
+    - '!venv/**'
+    - '!node_modules/**'
+    - '!**/__pycache__/**'
+    - '!.github/**'
+    - '!.editorconfig'
+    - '!.nvmrc'
 
 # Handling python packages: https://www.serverless.com/blog/serverless-python-packaging
 plugins:

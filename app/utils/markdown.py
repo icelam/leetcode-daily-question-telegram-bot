@@ -43,7 +43,7 @@ class TelegramMarkdownConverter(MarkdownConverter):
         return f'_{text}' if text.strip() else text
 
     def convert_sup(self, el, text, convert_as_inline):
-        return f'^{text}'
+        return f'^{text}' if text.strip() else text
 
     def convert_a(self, el, text, convert_as_inline):
         el['href'] = re.sub(r'\(', '%28', el['href'])
