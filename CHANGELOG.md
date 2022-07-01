@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.4...v1.0.5) (2022-07-01)
+
+
+### Bug Fixes
+
+* filter empty string when generating delimiter for sup ([b7e29b0](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/b7e29b06a4ce68bb3951202a854aa1fcfdd739f5))
+
 ### [1.0.4](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.3...v1.0.4) (2022-07-01)
 
 
