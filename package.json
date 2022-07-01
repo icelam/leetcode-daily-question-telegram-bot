@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "Push notification to Telegram channel for Leetcode's question of today",
   "dependencies": {
-    "serverless-python-requirements": "^5.1.1"
+    "serverless-python-requirements": "^5.4.0"
   },
   "scripts": {},
   "author": "Ice Lam",
