@@ -1,5 +1,9 @@
 # Leetcode Daily Question Telegram Bot
 
+> **Warning**  
+> End of Maintenance Notice (2023-10-29):  
+> Visit [https://t.me/LeetcodeQustionOfToday/720](https://t.me/LeetcodeQustionOfToday/720) for more information.
+
 Fetch question of today from Leetcode's GraphQL API and send it to Telegram channel.
 
 ![Mockup](./docs/mockup.png)
