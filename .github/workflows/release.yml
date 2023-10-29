@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
       - name: Setup Node.js version
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version-file: '.nvmrc'
       - name: Generate release body
         run: |
           npx rexreplace "(#+ \[\d+\.\d+\.\d+].*?)#+ \[?\d+\.\d+\.\d+]?" "_" -s -M -G -m -o "CHANGELOG.md" > RELEASE_BODY.md

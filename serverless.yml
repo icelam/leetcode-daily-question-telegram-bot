@@ -27,6 +27,8 @@ package:
     - '!.github/**'
     - '!.editorconfig'
     - '!.nvmrc'
+    - '!*.md'
+    - '!Makefile'
 
 # Handling python packages: https://www.serverless.com/blog/serverless-python-packaging
 plugins:
