@@ -16,7 +16,7 @@ clean-venv:
 test-with-venv:
 	( \
     . ${VENV_ACTIVATE_PATH}; \
-    pip install -r requirements.txt; \
+    pip3 install -r requirements.txt; \
     . ${INIT_ENVIRONMENT_VARIABLE_SCRIPT}; \
     serverless invoke local -f cron; \
   )
@@ -25,7 +25,7 @@ test-with-venv:
 lint:
 	( \
     . ${VENV_ACTIVATE_PATH}; \
-    pip install -r requirements.txt; \
+    pip3 install -r requirements.txt; \
     pylint ${APP_FOLDER} \
   )
 
