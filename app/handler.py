@@ -20,7 +20,7 @@ def get_question_of_today():
     client = requests.session()
 
     # Visit leetcode webpage to retrieve a CSRF token first
-    client.get(LEETCODE_ALL_PROBLEM_URL)
+    client.get(LEETCODE_DOMAIN)
 
     if 'csrftoken' in client.cookies:
         csrftoken = client.cookies['csrftoken']
