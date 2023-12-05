@@ -1,6 +1,6 @@
 {
   "name": "leetcode-daily-question-telegram-bot",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Push notification to Telegram channel for Leetcode's question of today",
   "dependencies": {
     "serverless-python-requirements": "^5.4.0"

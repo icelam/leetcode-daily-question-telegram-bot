@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.5...v1.0.6) (2023-12-05)
+
+
+### Bug Fixes
+
+* fix issue that csrf token cannot be retrieved when directly land on problem list page ([6ae9b15](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/6ae9b157e38f8b7476641c854514d8a1e1921c26))
+
 ### [1.0.5](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.4...v1.0.5) (2022-07-01)
 
 
