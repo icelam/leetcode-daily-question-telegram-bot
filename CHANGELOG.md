@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.6...v1.1.0) (2024-03-12)
+
+
+### Features
+
+* fix request format so it won't block by cloudflare ([eb3f38d](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/eb3f38dc9792a06f4956982d586f449931aeb671))
+
 ### [1.0.6](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.5...v1.0.6) (2023-12-05)
 
 
