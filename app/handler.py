@@ -17,19 +17,10 @@ CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
 def get_question_of_today():
     """Fetch today's question from Leetcode's GraphQL API"""
 
-    client = requests.session()
-
-    # Visit leetcode webpage to retrieve a CSRF token first
-    client.get(LEETCODE_DOMAIN)
-
-    if 'csrftoken' in client.cookies:
-        csrftoken = client.cookies['csrftoken']
-    else:
-        csrftoken = ''
-
-    response = client.post(
+    request = requests.Request(
+        'POST',
         LEETCODE_DOMAIN + '/graphql/',
-        data={
+        json={
             'query': """query questionOfToday {
                 activeDailyCodingChallengeQuestion {
                     link
@@ -51,12 +42,16 @@ def get_question_of_today():
             }""",
             'variables': {},
             'operationName': 'questionOfToday',
-            'csrfmiddlewaretoken': csrftoken
         },
         headers={
-            'referer': LEETCODE_ALL_PROBLEM_URL
+            "authority": "leetcode.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         }
     )
+
+    prepped_request = request.prepare()
+    session = requests.Session()
+    response = session.send(prepped_request)
 
     try:
         return response.json()
