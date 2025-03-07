@@ -27,7 +27,8 @@ def get_question_of_today():
                     date
                     question {
                         questionFrontendId
-                        title titleSlug
+                        title
+                        titleSlug
                         content
                         isPaidOnly
                         difficulty
