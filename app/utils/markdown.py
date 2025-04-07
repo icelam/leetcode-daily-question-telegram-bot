@@ -63,6 +63,7 @@ def generate(html, **options):
 
     result = TelegramMarkdownConverter(
         **options,
+        autolinks=False,
         convert=['br', 'p', 'img', 'code', 'pre', 'ul', 'ol', 'li', 'a', 'sup', 'sub', 'style'],
         bullets='•••'
     ).convert(html).strip()
