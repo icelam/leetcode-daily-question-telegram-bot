@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.1.0...v1.2.0) (2025-04-07)
+
+
+### Features
+
+* remove hard-coded user agent string which is unnecessary to fire a successful call ([0106e09](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/0106e09eedc980222b80e74d084ae8355108e6ec))
+
+
+### Bug Fixes
+
+* **markdown:** disable auto links when converting to markdown ([70029d3](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/70029d395507ec5e0e0d6a27c9301f59545550b8))
+* **markdown:** strip style tags when converting html to markdown ([480fcb9](https://github.com/icelam/leetcode-daily-question-telegram-bot/commit/480fcb9fa82a0f6e59fe365f8cb6d425276d06fb))
+
 ## [1.1.0](https://github.com/icelam/leetcode-daily-question-telegram-bot/compare/v1.0.6...v1.1.0) (2024-03-12)
 
 
