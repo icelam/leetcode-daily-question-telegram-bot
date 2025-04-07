@@ -55,12 +55,15 @@ class TelegramMarkdownConverter(MarkdownConverter):
             convert_as_inline=convert_as_inline
         )
 
+    def convert_style(self, el, text, convert_as_inline):
+        return ''
+
 def generate(html, **options):
     """Convert function with options predefined"""
 
     result = TelegramMarkdownConverter(
         **options,
-        convert=['br', 'p', 'img', 'code', 'pre', 'ul', 'ol', 'li', 'a', 'sup', 'sub'],
+        convert=['br', 'p', 'img', 'code', 'pre', 'ul', 'ol', 'li', 'a', 'sup', 'sub', 'style'],
         bullets='•••'
     ).convert(html).strip()
 
